@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APPLE</title>
+
+  <!-- Vega libraries (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.23.0"></script>
+
+  <style>
+    :root { --maxw: 1200px; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: #222;
+      background: #fafafa;
+    }
+    header {
+      padding: 1rem 1rem 0.5rem;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      text-align: center; 
+    }
+    .vis-wrap {
+      max-width: var(--maxw);
+      margin: 0 auto 28px;
+      padding: 0 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+      padding: 14px;
+    }
+    .title {
+      margin: 0 0 10px;
+      font-size: 50px;
+      font-weight: 700;
+      color: #333;
+    }
+    /* Make embeds responsive */
+    .vega-embed {
+      width: 100% !important;
+    }
+
+    /* Keep for future charts needing centering */
+    #radial_fnb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #radial_fnb > div {
+      margin: 0 auto !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Titles copied from your HTML -->
+    <h1 class="title">Diving Into Apple: Iphone</h1>
+    <p>This visualisation explores global iPhone popularity and spotlights its leading product category</p>
+  </header>
+
+    <!-- Map (middle) -->
+  <section class="vis-wrap">
+    <div class="card">
+      <div id="fnb_map" aria-label="Global iPhone market share map"></div>
+    </div>
+  </section>
+
+  <!-- Stacked area (top) -->
+  <section class="vis-wrap">
+    <div class="card">
+      <div id="stacked_chart" aria-label="Apple revenue share by category 2018–2024"></div>
+    </div>
+  </section>
+
+  <!-- (Optional placeholder to keep sample structure; no chart rendered) -->
+  <section class="vis-wrap" style="display:none">
+    <div class="card">
+      <div id="radial_fnb"></div>
+    </div>
+  </section>
+
+  <!-- Load your visualisations -->
+ <script src="script.js"></script>
+</body>
+</html>
